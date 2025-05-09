@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: fuel-price-predict-app        # 👈 Tên ứng dụng, có thể đổi
+    env: python
+    plan: free
+    buildCommand: ""             # 👈 Flask không cần build
+    startCommand: "python fuel_price.py"  # 👈 File chính để chạy
