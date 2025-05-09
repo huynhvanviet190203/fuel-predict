@@ -1,7 +1,10 @@
 services:
   - type: web
-    name: fuel-price-predict-app        # 👈 Tên ứng dụng, có thể đổi
+    name: fuel-price-predict-app        # 👈 Tên ứng dụng (tùy chọn)
     env: python
     plan: free
-    buildCommand: ""             # 👈 Flask không cần build
-    startCommand: "python fuel_price.py"  # 👈 File chính để chạy
+    buildCommand: ""                    # 👈 Flask không cần build
+    startCommand: "python fuel_price.py"
+    envVars:
+      - key: PORT
+        value: 10000                    # 👈 Flask sẽ chạy đúng cổng Render yêu cầu
